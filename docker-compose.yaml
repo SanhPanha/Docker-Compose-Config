@@ -1,0 +1,33 @@
+services: 
+  orderer.personal-network.com: 
+    extends: 
+      file: base/common-service.yaml
+      service: orderer-common-service
+    container_name: orderer.personal-network.com
+    ports: 
+      - 8888:80
+    networks:
+      - personal-network
+  peer0.org1.personal-network.com: 
+    extends: 
+      file: base/common-service.yaml
+      service: peer-common-service
+    container_name: peer0.org1.personal-network-com
+    ports:
+      - 7777:80 
+    networks:
+      - personal-network
+  peer1.org1.personal-network-com: 
+    extends: 
+      file: base/common-service.yaml
+      service: peer-common-service
+    ports: 
+      - 9999:80
+    container_name: peer1.org1.personal-network-com
+    networks:
+      - personal-network
+networks:
+  personal-network:
+
+
+# up the peers first , and then orderer 

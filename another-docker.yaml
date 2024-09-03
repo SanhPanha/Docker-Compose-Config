@@ -1,0 +1,8 @@
+services:
+  another-service:
+    image: nginx:latest
+    container_name: another-nginx-container
+    ports:
+      - 9999:80
+      # 9999 -> host port
+      # 80 -> container port

@@ -1,0 +1,9 @@
+# this service is base service for other services to customize and use it
+
+services:
+  peer-common-service:
+    image: nginx:alpine
+    container_name: peer-container
+  orderer-common-service:
+    image: nginx:latest
+    container_name: orderer-base-container
